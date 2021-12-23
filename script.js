@@ -1,34 +1,52 @@
-var display = document.querySelector("#display");
+var eq = "";
+var number = [];
+var opera = [];
 
 function press(num){
-  if (num == ".") {
-
-  } else {
-    var result = document.querySelector("#display");
-    display += num;
-    result.innerHTML = display;
-  }
+  var display = document.querySelector("#display");
+  eq += num;
+  display.innerHTML = eq;
 }
 
 function setOP(operation){
-  var result = document.querySelector("#display");
+  number.push(parseFloat(eq));
   if (operation === "+") {
-
+    opera.push("+");
   } else if (operation === "-") {
-
+    opera.push("-");
   } else if (operation === "*") {
-
+    opera.push("*");
   } else if (operation === "/") {
-
+    opera.push("/");
   }
+  eq = "";
 }
 
 function calculate(){
-
+  number.push(parseFloat(eq));
+  var result = number[0];
+  for (var i = 0; i < opera.length; i++) {
+    if (opera[i] == "+") {
+      result += number[i + 1];
+    }else if (opera[i] == "-") {
+      result -= number[i + 1];
+    }else if (opera[i] == "*") {
+      result *= number[i + 1];
+    }else if (opera[i] == "/") {
+      result /= number[i + 1];
+    }
+  }
+  var display = document.querySelector("#display");
+  display.innerHTML = result;
+  number = [];
+  opera = [];
+  eq = result;
 }
 
 function clr(){
-  display = 0;
-  var result = document.querySelector("#display");
-  result.innerHTML = 0;
+  number = [];
+  eq = "";
+  var display = document.querySelector("#display");
+  display.innerHTML = 0;
+  opera = [];
 }
