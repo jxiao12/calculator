@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#calculator {
+  margin: 50px auto;
+  width: 300px;
+  background-color: black;
+  height: 400px;
+}
+
+#display {
+  color: white;
+  text-align: right;
+  height: 50px;
+  font-size: 300%;
+  margin: 20px;
+}
+
+.row {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  border-radius: 175%;
+  background-color: #646566;
+  color: white;
+  height: 50px;
+  width: 50px;
+  font-size: 150%;
+  margin: 5px;
+}
+
+#equals {
+  background-color: silver;
+  width: 275px;
+  height: 50px;
+  border-radius: 50px 50px 50px 50px;
+  border: 0px solid black;
+}
+
+.operator {
+  background-color: orange;
+}
